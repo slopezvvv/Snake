@@ -12,7 +12,7 @@ namespace Snake
 
         public Comida(int x, int y) : base(x, y)
         {
-           _esComido = false;
+            _esComido = false;
         }
 
         public bool EsComido { get => _esComido; set => _esComido = value; }

@@ -9,7 +9,7 @@ namespace Snake
     class Snake : Entidad2D
     {
         
-        private int _hp;
+        private int _hp; // vida de la serpiente
         private const int _velocidad = 3;
         
         public Snake(int x, int y) : base(x, y)

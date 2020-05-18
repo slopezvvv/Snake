@@ -38,10 +38,20 @@ namespace Snake
             Pen lapizRojo = new Pen(Color.Red, 10);
 
             // Dibujar la serpiente
+            // (x, y, w, h)
+            // x = coordenada x
+            // y = coordenada y
+            // w = ancho o width
+            // h = altura o height
             Rectangle rectSnake = new Rectangle(_snake.Coordenadas.X, _snake.Coordenadas.Y, 
                                            _snake.SizeGrafico, _snake.SizeGrafico);
 
             // Dibujar la comida
+            // (x, y, w, h)
+            // x = coordenada x
+            // y = coordenada y
+            // w = ancho o width
+            // h = altura o height
             Rectangle rectComida = new Rectangle(_comida.Coordenadas.X, _comida.Coordenadas.Y,
                                            _comida.SizeGrafico, _comida.SizeGrafico);
 
@@ -52,23 +62,53 @@ namespace Snake
 
         private void VentanaDelJuego_KeyDown(object sender, KeyEventArgs e)
         {
-            int c = (int)e.KeyCode.ToString().ToLower()[0];
-            //MessageBox.Show("Se presiono la tecla: " + (char)97);
+            // Letra Mayuscula
+            //Console.WriteLine(e.KeyValue);
 
-            switch(c)
+
+            /*
+             * Enum con letras: A = 65, B = 66, C = 67....
+             * Solo contiene mayusculas D:
+             */
+            int c = (int) e.KeyCode.ToString().ToLower()[0];
+
+            // Letra minuscula despues del proceso ToLower
+            //Console.WriteLine(c);
+
+            try
             {
-                case 97:  // a
-                    MessageBox.Show("La serpiente va hacia la izquierda");
-                    break;
-                case 100: // d
-                    MessageBox.Show("La serpiente va hacia la derecha");
-                    break;
-                case 115: // s
-                    MessageBox.Show("La serpiente va hacia abajo");
-                    break;
-                case 119: // w
-                    MessageBox.Show("La serpiente va hacia arriba");
-                    break;
+                switch (c)
+                {
+                    // mover al gusano a la izquierda
+                    case 97:  // a
+                              // Restar la velocidad a la X actual, es decir, X - velocidad.
+                        int nuevaX = _snake.Coordenadas.X - _snake.Velocidad;
+                        int nuevaY = _snake.Coordenadas.Y; // la misma Y
+
+                        Console.WriteLine("Coordenada actual: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
+
+                        _snake.Coordenadas = new Point(nuevaX, nuevaY); // Modificacion de la coordenada
+
+                        Console.WriteLine("Coordenada modificada: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
+
+                        break;
+                    // Mover al gusano a la derecha
+                    case 100: // d
+                        MessageBox.Show("La serpiente va hacia la derecha");
+                        break;
+                    // Mover al gusano hacia abajo
+                    case 115: // s
+                        MessageBox.Show("La serpiente va hacia abajo");
+                        break;
+                    // Mover al gusano hacia arriba
+                    case 119: // w
+                        MessageBox.Show("La serpiente va hacia arriba");
+                        break;
+                }
+            }
+            finally
+            {
+                Invalidate();
             }
         }
     }
