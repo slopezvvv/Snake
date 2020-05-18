@@ -29,50 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaDelJuego));
-            this._snake = new System.Windows.Forms.Label();
-            this._comida = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // _snake
-            // 
-            this._snake.AutoSize = true;
-            this._snake.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._snake.Location = new System.Drawing.Point(248, 197);
-            this._snake.Name = "_snake";
-            this._snake.Size = new System.Drawing.Size(24, 31);
-            this._snake.TabIndex = 0;
-            this._snake.Text = "-";
-            // 
-            // _comida
-            // 
-            this._comida.AutoSize = true;
-            this._comida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._comida.ForeColor = System.Drawing.Color.Red;
-            this._comida.Location = new System.Drawing.Point(473, 212);
-            this._comida.Name = "_comida";
-            this._comida.Size = new System.Drawing.Size(14, 16);
-            this._comida.TabIndex = 1;
-            this._comida.Text = "*";
             // 
             // VentanaDelJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this._comida);
-            this.Controls.Add(this._snake);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "VentanaDelJuego";
             this.Text = "Juego Snake";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.VentanaDelJuego_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VentanaDelJuego_KeyDown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label _snake;
-        private System.Windows.Forms.Label _comida;
     }
 }
 
