@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Snake
+namespace Vista
 {
     public partial class RegistrarUsuario : Form
     {

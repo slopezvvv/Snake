@@ -1,4 +1,4 @@
-﻿namespace Snake
+﻿namespace Vista
 {
     partial class RegistrarUsuario
     {

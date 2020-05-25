@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Snake.Properties
+namespace Vista.Properties
 {
 
 

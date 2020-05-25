@@ -1,4 +1,4 @@
-﻿namespace Snake
+﻿namespace Vista
 {
     partial class VentanaDelJuego
     {
@@ -41,7 +41,7 @@
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "VentanaDelJuego";
-            this.Text = "Juego Snake";
+            this.Text = "Juego Vista";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.VentanaDelJuego_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VentanaDelJuego_KeyDown);
             this.ResumeLayout(false);
