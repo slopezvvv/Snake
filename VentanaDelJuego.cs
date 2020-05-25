@@ -58,6 +58,7 @@ namespace Snake
             // Dibujar en pantalla los graficos
             e.Graphics.DrawRectangle(lapizNegro, rectSnake);
             e.Graphics.DrawRectangle(lapizRojo, rectComida);
+
         }
 
         private void VentanaDelJuego_KeyDown(object sender, KeyEventArgs e)

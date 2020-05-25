@@ -49,6 +49,18 @@
     <Compile Include="Comida.cs" />
     <Compile Include="Entidad2D.cs" />
     <Compile Include="Mapa.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarUsuario.Designer.cs">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Snake.cs" />
     <Compile Include="VentanaDelJuego.cs">
       <SubType>Form</SubType>
@@ -58,6 +70,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarUsuario.resx">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaDelJuego.resx">
       <DependentUpon>VentanaDelJuego.cs</DependentUpon>
     </EmbeddedResource>
