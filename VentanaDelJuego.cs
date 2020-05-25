@@ -77,13 +77,14 @@ namespace Snake
 
             try
             {
+                int nuevaX = _snake.Coordenadas.X;
+                int nuevaY = _snake.Coordenadas.Y;
+
                 switch (c)
                 {
                     // mover al gusano a la izquierda
                     case 97:  // a
-                              // Restar la velocidad a la X actual, es decir, X - velocidad.
-                        int nuevaX = _snake.Coordenadas.X - _snake.Velocidad;
-                        int nuevaY = _snake.Coordenadas.Y; // la misma Y
+                        nuevaX = _snake.Coordenadas.X - _snake.Velocidad;
 
                         Console.WriteLine("Coordenada actual: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
 
@@ -94,15 +95,33 @@ namespace Snake
                         break;
                     // Mover al gusano a la derecha
                     case 100: // d
-                        MessageBox.Show("La serpiente va hacia la derecha");
+                        nuevaX = _snake.Coordenadas.X + _snake.Velocidad;
+
+                        Console.WriteLine("Coordenada actual: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
+
+                        _snake.Coordenadas = new Point(nuevaX, nuevaY); // Modificacion de la coordenada
+
+                        Console.WriteLine("Coordenada modificada: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
                         break;
                     // Mover al gusano hacia abajo
                     case 115: // s
-                        MessageBox.Show("La serpiente va hacia abajo");
+                        nuevaY = _snake.Coordenadas.Y + _snake.Velocidad; // la misma Y
+
+                        Console.WriteLine("Coordenada actual: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
+
+                        _snake.Coordenadas = new Point(nuevaX, nuevaY); // Modificacion de la coordenada
+
+                        Console.WriteLine("Coordenada modificada: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
                         break;
                     // Mover al gusano hacia arriba
                     case 119: // w
-                        MessageBox.Show("La serpiente va hacia arriba");
+                        nuevaY = _snake.Coordenadas.Y - _snake.Velocidad; // la misma Y
+
+                        Console.WriteLine("Coordenada actual: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
+
+                        _snake.Coordenadas = new Point(nuevaX, nuevaY); // Modificacion de la coordenada
+
+                        Console.WriteLine("Coordenada modificada: X:" + _snake.Coordenadas.X + ", Y:" + _snake.Coordenadas.Y);
                         break;
                 }
             }
